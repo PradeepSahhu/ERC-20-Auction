@@ -38,8 +38,8 @@ contract ERC20Auction is ERC20 {
 
        uint totalWei =  TokenCount * eachTokenPrice;
        require(msg.value >= totalWei, "Not enough Wei");
-       (bool response) = transfer(msg.sender,TokenCount);
-       require(response,"Can't Completed");
+       _transfer(owner,msg.sender,TokenCount);
+     
     }
 
 
