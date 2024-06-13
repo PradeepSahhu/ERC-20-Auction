@@ -32,8 +32,8 @@ Naming my token ```UniCoin``` and its Symbol is  ```UCN``` with price 100 wei pe
 
        uint totalWei =  TokenCount * eachTokenPrice;
        require(msg.value >= totalWei, "Not enough Wei");
-       (bool response) = transfer(msg.sender,TokenCount);
-       require(response,"Can't Completed");
+       _transfer(owner,msg.sender,TokenCount);
+     
     }
 ```
 
