@@ -28,6 +28,10 @@ contract ERC20Auction is ERC20 {
         owner = msg.sender;
     }
 
+    function mintMoreTokens(uint _amount) external onlyOwner{
+        _mint(msg.sender, _amount);
+    }
+
     function withdraw() public payable{
         (bool msgCall,) = payable(owner).call{value:address(this).balance}("");
         require(msgCall, "Cant full filled");
@@ -74,6 +78,7 @@ contract ERC20Auction is ERC20 {
       
     }
 
+   
 
 
 
