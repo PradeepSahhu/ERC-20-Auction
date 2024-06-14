@@ -27,6 +27,14 @@ Through import command i am importing it.
 
 Naming my token ```UniCoin``` and its Symbol is  ```UCN``` with price 100 wei per token for instant buy and instant sell.
 
+
+```Solidity
+function mintMoreTokens(uint _amount) external onlyOwner{
+        _mint(msg.sender, _amount);
+    }
+```
+MintMoreTokens as the name suggest it is used for minting more tokens into the contract so that they can be auctioned later.
+
 ```Solidity
   function InstantBuy(uint TokenCount) public payable {
 
